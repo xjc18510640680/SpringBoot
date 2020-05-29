@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -30,6 +32,13 @@ public class UserController {
         } else {
             return "保存失败";
         }
+    }
+
+    @RequestMapping("/userList")
+    @ResponseBody
+    public List<UserDo> userList() {
+        List<UserDo> list = userService.queryUserInfosForList();
+        return list;
     }
 
     @RequestMapping("/index")

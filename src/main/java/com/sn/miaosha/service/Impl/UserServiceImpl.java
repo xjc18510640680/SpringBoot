@@ -7,6 +7,8 @@ import com.sn.miaosha.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @Service
@@ -19,6 +21,12 @@ public class UserServiceImpl implements UserService {
     public UserDo queryuser(Integer id) {
         UserDo userDo = userMapper.selectByPrimaryKey(id);
         return userDo;
+    }
+
+    @Override
+    public List<UserDo> queryUserInfosForList() {
+        List<UserDo> list = userMapper.queryUserInfosForList();
+        return list;
     }
 
     @Override

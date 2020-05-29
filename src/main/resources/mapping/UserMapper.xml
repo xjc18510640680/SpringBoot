@@ -20,6 +20,11 @@
     -->
     id, userid, username, password
   </sql>
+  <select id="queryUserInfosForList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--
       WARNING - @mbg.generated
