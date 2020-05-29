@@ -3,7 +3,6 @@ package com.sn.miaosha.mapper;
 import com.sn.miaosha.entity.UserDo;
 
 import java.util.List;
-import java.util.Map;
 
 public interface UserMapper {
     /**

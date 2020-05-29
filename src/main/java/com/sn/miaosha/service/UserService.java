@@ -21,6 +21,13 @@ public interface UserService {
     List<List<Map<String, Object>>> queryUserInfosForList() throws Exception;
 
     /**
+     * 查询所有用户list
+     * @return
+     * @throws Exception
+     */
+    List<Map<String, Object>> queryUsersForList() throws Exception;
+
+    /**
      * 保存用户
      * @return
      */

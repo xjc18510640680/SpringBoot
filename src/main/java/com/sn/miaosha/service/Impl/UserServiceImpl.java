@@ -28,14 +28,23 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<List<Map<String, Object>>> queryUserInfosForList() throws Exception {
+        List<List<Map<String, Object>>> result = ListUtils.groupList(queryUserInfos(), 4);
+        return result;
+    }
+
+    @Override
+    public List<Map<String, Object>> queryUsersForList() throws Exception {
+        return queryUserInfos();
+    }
+
+    private List<Map<String, Object>> queryUserInfos() throws Exception{
         List<UserDo> list = userMapper.queryUserInfosForList();
         // List<UserDo>转List<Map<String, Object>>
         List<Map<String, Object>> userList = new ArrayList<>();
         for(UserDo userDo : list) {
             userList.add(ConvertUtils.convertObjToMap(userDo));
         }
-        List<List<Map<String, Object>>> result = ListUtils.groupList(userList, 4);
-        return result;
+        return userList;
     }
 
     @Override
