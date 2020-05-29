@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/user")
@@ -36,8 +37,8 @@ public class UserController {
 
     @RequestMapping("/userList")
     @ResponseBody
-    public List<UserDo> userList() {
-        List<UserDo> list = userService.queryUserInfosForList();
+    public List<List<Map<String, Object>>> userList() throws Exception {
+        List<List<Map<String, Object>>> list = userService.queryUserInfosForList();
         return list;
     }
 

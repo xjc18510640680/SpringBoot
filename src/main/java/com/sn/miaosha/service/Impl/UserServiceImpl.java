@@ -1,5 +1,7 @@
 package com.sn.miaosha.service.Impl;
 
+import com.sn.miaosha.common.ConvertUtils;
+import com.sn.miaosha.common.ListUtils;
 import com.sn.miaosha.common.RandomName;
 import com.sn.miaosha.entity.UserDo;
 import com.sn.miaosha.mapper.UserMapper;
@@ -7,6 +9,7 @@ import com.sn.miaosha.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -24,9 +27,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserDo> queryUserInfosForList() {
+    public List<List<Map<String, Object>>> queryUserInfosForList() throws Exception {
         List<UserDo> list = userMapper.queryUserInfosForList();
-        return list;
+        // List<UserDo>转List<Map<String, Object>>
+        List<Map<String, Object>> userList = new ArrayList<>();
+        for(UserDo userDo : list) {
+            userList.add(ConvertUtils.convertObjToMap(userDo));
+        }
+        List<List<Map<String, Object>>> result = ListUtils.groupList(userList, 4);
+        return result;
     }
 
     @Override

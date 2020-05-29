@@ -6,7 +6,23 @@ import java.util.List;
 import java.util.Map;
 
 public interface UserService {
+    /**
+     * 根据id查询用户
+     * @param id
+     * @return
+     */
     UserDo queryuser(Integer id);
-    List<UserDo> queryUserInfosForList();
+
+    /**
+     * 查询所有用户list
+     * @return
+     * @throws Exception
+     */
+    List<List<Map<String, Object>>> queryUserInfosForList() throws Exception;
+
+    /**
+     * 保存用户
+     * @return
+     */
     int saveUser();
 }

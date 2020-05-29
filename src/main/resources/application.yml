@@ -21,6 +21,13 @@ spring:
     password: admin
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      test-on-borrow: true
+      stat-view-servlet:
+        allow: true
   # 热部署
   devtools:
     restart:
@@ -49,3 +56,10 @@ spring:
     servlet:
       content-type: text/html
     cache: false
+
+#分页
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
