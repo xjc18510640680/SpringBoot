@@ -11,7 +11,7 @@ public interface UserService {
      * @param id
      * @return
      */
-    UserDo queryuser(Integer id);
+    UserDo queryUser(Integer id);
 
     /**
      * 查询所有用户list

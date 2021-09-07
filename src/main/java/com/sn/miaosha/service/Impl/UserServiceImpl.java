@@ -21,15 +21,13 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public UserDo queryuser(Integer id) {
-        UserDo userDo = userMapper.selectByPrimaryKey(id);
-        return userDo;
+    public UserDo queryUser(Integer id) {
+        return userMapper.selectByPrimaryKey(id);
     }
 
     @Override
     public List<List<Map<String, Object>>> queryUserInfosForList() throws Exception {
-        List<List<Map<String, Object>>> result = ListUtils.groupList(queryUserInfos(), 4);
-        return result;
+        return ListUtils.groupList(queryUserInfos(), 4);
     }
 
     @Override
@@ -50,12 +48,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public int saveUser() {
         UserDo userDo = new UserDo();
-        Integer id = UUID.randomUUID().toString().hashCode();
+        int id = UUID.randomUUID().toString().hashCode();
         userDo.setId(id < 0 ? (-id) : id);
         userDo.setUserid(id < 0 ? (-id) : id);
         userDo.setUsername(RandomName.randomName(true, 3));
         userDo.setPassword("123456");
-        int success = userMapper.insert(userDo);
-        return success;
+        return userMapper.insert(userDo);
     }
 }

@@ -18,20 +18,17 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    private String NAMESPACE_URL = "freemarker/userlist";
-
     @RequestMapping("userInfos")
     public String userInfos(ModelMap modelMap) throws Exception{
         modelMap.put("users", userService.queryUsersForList());
         modelMap.put("title", "用户信息");
-        return NAMESPACE_URL;
+        return "freemarker/userlist";
     }
 
     @RequestMapping("/getUser")
     @ResponseBody
     public UserDo getUser(Integer id) {
-        UserDo userDo = userService.queryuser(id);
-        return userDo;
+        return userService.queryUser(id);
     }
 
     @RequestMapping("/saveUser")
@@ -48,8 +45,7 @@ public class UserController {
     @RequestMapping("/userList")
     @ResponseBody
     public List<List<Map<String, Object>>> userList() throws Exception {
-        List<List<Map<String, Object>>> list = userService.queryUserInfosForList();
-        return list;
+        return userService.queryUserInfosForList();
     }
 
     @RequestMapping("/index")
