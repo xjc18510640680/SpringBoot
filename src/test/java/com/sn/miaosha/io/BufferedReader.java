@@ -1,6 +1,7 @@
 package com.sn.miaosha.io;
 
 import java.io.*;
+import java.math.BigDecimal;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -27,6 +28,7 @@ public class BufferedReader {
 //        String sr = HttpRequest.sendPost("https://prod-i0-scfcoord.carzone360.com/backdoor/event/retry?", "id=[100000718228473226]");
 //        System.out.println(sr);
         getIdLists(BufferedReader.getTexts()).forEach(System.out::println);
+        System.out.println(new BigDecimal("25000").subtract(new BigDecimal("499.72").add(new BigDecimal("1500")).add(new BigDecimal("1479.07"))));
     }
 
     /**
