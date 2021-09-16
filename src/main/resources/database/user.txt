@@ -11,3 +11,5 @@ CREATE TABLE `user` (
   `password` varchar(255) DEFAULT NULL COMMENT '用户密码',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `user` (`id`, `userid`, `username`, `password`) VALUES (100000, 702693, 'admin', 'admin');
