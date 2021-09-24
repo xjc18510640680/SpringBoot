@@ -1,6 +1,6 @@
-package com.sn.miaosha.optimization.purchase.before.listener.handler;
+package com.sn.miaosha.optimization.purchase.common.handler;
 
-import com.sn.miaosha.optimization.purchase.before.ro.PurchaseOrderMessageBody;
+import com.sn.miaosha.optimization.purchase.common.ro.PurchaseOrderMessageBody;
 
 /**
  * @author: XuJiuCheng

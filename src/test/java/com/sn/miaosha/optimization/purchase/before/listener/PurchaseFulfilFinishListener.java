@@ -1,9 +1,9 @@
 package com.sn.miaosha.optimization.purchase.before.listener;
 
 import com.sn.miaosha.optimization.purchase.before.enums.PurchaseTypeEnum;
-import com.sn.miaosha.optimization.purchase.before.listener.handler.CreatePurchaseHandler;
-import com.sn.miaosha.optimization.purchase.before.listener.handler.PurchaseFinishHandler;
-import com.sn.miaosha.optimization.purchase.before.ro.PurchaseOrderMessageBody;
+import com.sn.miaosha.optimization.purchase.common.handler.CreatePurchaseHandler;
+import com.sn.miaosha.optimization.purchase.common.handler.PurchaseFinishHandler;
+import com.sn.miaosha.optimization.purchase.common.ro.PurchaseOrderMessageBody;
 
 /**
  * @author: XuJiuCheng

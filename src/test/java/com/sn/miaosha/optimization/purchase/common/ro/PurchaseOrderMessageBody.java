@@ -1,4 +1,4 @@
-package com.sn.miaosha.optimization.purchase.before.ro;
+package com.sn.miaosha.optimization.purchase.common.ro;
 
 import java.io.Serializable;
 

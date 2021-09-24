@@ -30,9 +30,9 @@ public enum PurchaseTypeEnum {
 
     ZYCS(11, "ORDER_ZYCS", "自营厂送业务"),;
 
-    private Integer purchaseType;
-    private String purchaseName;
-    private String purchaseDesc;
+    private final Integer purchaseType;
+    private final String purchaseName;
+    private final String purchaseDesc;
 
     PurchaseTypeEnum(Integer purchaseType, String purchaseName, String purchaseDesc) {
         this.purchaseType = purchaseType;
