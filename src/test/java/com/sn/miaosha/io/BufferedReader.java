@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
  */
 public class BufferedReader {
 
-    private static final String pathname = "/Users/xujiucheng/Desktop/work/idea-workspace/GitSelf/miaosha/src/test/java/com/sn/miaosha/io/test.txt";
+    private static final String pathname = "/Users/xujiucheng/Desktop/idea-workspace/GitSelf/miaosha/src/test/java/com/sn/miaosha/io/test.txt";
 
     public static void main(String[] args) {
         System.out.println(getIdLists(BufferedReader.getTexts()));
