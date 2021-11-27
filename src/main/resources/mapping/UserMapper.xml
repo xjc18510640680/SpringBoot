@@ -25,6 +25,17 @@
     <include refid="Base_Column_List" />
     from user
   </select>
+  <select id="queryUserInfosForLists" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where id IN
+    <if test="idList.size()>0">
+      <foreach collection="idList" item="kzCode" index="index" open="(" separator="," close=")">
+        #{kzCode}
+      </foreach>
+    </if>
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--
       WARNING - @mbg.generated

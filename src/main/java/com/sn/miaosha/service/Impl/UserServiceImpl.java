@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -27,7 +28,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<List<Map<String, Object>>> queryUserInfosForList() throws Exception {
-        return ListUtils.groupList(queryUserInfos(), 4);
+        List<Integer> idList = new ArrayList<>();
+        idList.add(100000);
+        idList.add(100001);
+        idList.add(100003);
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("idList", idList);
+        List<UserDo> list = userMapper.queryUserInfosForLists(params);
+        List<Map<String, Object>> userList = new ArrayList<>();
+        for(UserDo userDo : list) {
+            userList.add(ConvertUtils.convertObjToMap(userDo));
+        }
+        return ListUtils.groupList(userList, 4);
     }
 
     @Override

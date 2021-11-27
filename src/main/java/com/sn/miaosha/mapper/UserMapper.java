@@ -1,8 +1,10 @@
 package com.sn.miaosha.mapper;
 
 import com.sn.miaosha.entity.UserDo;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserMapper {
     /**
@@ -54,4 +56,6 @@ public interface UserMapper {
     int updateByPrimaryKey(UserDo record);
 
     List<UserDo> queryUserInfosForList();
+
+    List<UserDo> queryUserInfosForLists(@Param("params") Map<String, Object> params);
 }
