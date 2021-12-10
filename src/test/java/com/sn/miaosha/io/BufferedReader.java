@@ -19,7 +19,11 @@ public class BufferedReader {
     private static final String pathname = "/Users/xujiucheng/Desktop/idea-workspace/GitSelf/miaosha/src/test/java/com/sn/miaosha/io/test.txt";
 
     public static void main(String[] args) {
-        System.out.println(getIdLists(BufferedReader.getTexts()));
+//        System.out.println(getIdLists(BufferedReader.getTexts()));
+
+        String str = "";
+        System.out.println(str.startsWith("http"));
+
     }
 
     /**

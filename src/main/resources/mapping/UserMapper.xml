@@ -29,7 +29,9 @@
     select
     <include refid="Base_Column_List" />
     from user
-    where id IN
+    where username = #{id}
+
+         and id IN
     <if test="idList.size()>0">
       <foreach collection="idList" item="kzCode" index="index" open="(" separator="," close=")">
         #{kzCode}
