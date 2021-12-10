@@ -33,7 +33,6 @@ public class UserServiceImpl implements UserService {
         idList.add(100001);
         idList.add(100003);
         Map<String, Object> params = new HashMap<String, Object>();
-        params.put("id", "1");
         params.put("idList", idList);
         List<UserDo> list = userMapper.queryUserInfosForLists(params);
         List<Map<String, Object>> userList = new ArrayList<>();
